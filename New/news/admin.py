@@ -7,7 +7,8 @@ admin.site.register(Genre)
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('header', 'image', 'article', 'slug', 'date', 'display_genere' )
+    list_display = ('header', 'image', 'article', 'date', 'display_genre' )
+    list_filter = ('date', 'genre')
 
 
 
