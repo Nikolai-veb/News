@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse # Used to generate URls by reversing the URL patterns
+import PIL
 
 # Create your models here.
 class Genre(models.Model):
@@ -18,7 +19,7 @@ class News(models.Model):
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this news')
     image =  models.ImageField()
     article = models.TextField(help_text='Enter article')
-    slug = models.SlugField(verbose_name='URL', max_length=50, unique=True,)
+    slug = models.SlugField(verbose_name='URL', blank=True)
     date = models.DateField(null=True, blank=True)
     def __str__(self):
         return self.header

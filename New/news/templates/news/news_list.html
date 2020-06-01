@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>News List</h1>
+
+{% if news_list %}
+   <ul>
+
+   {% for new in news_list %}
+      <li>
+         <a href="{{ new.get_absolute_url  }}">{{ new.header }}</a> 
+      </li>
+    {% endfor %}
+
+   </ul>
+{% else %}
+   <p>There are no news </p>
+{% endif %}       
+{% endblock %}
